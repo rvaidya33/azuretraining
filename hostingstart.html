@@ -1,160 +1,150 @@
 
-<!doctype html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<title>Histography - Timeline of History</title>
-<meta property="og:title" content="Histography - Timeline of History" />
-<meta name="twitter:title" content="Histography - Timeline of History" />
-<meta name="Description" content="Histography is an interactive timeline that spans across 14 billion years of history, from the Big Bang to 2015" />
-<meta property="og:description" content="Histography is an interactive timeline that spans across 14 billion years of history, from the Big Bang to 2015" />
-<meta name="twitter:description" content="Histography is an interactive timeline that spans across 14 billion years of history, from the Big Bang to 2015" />
-<link rel="author" href="cargocollective.com/matanstauber" />
-<link rel="publisher" href="cargocollective.com/matanstauber" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="http://histography.io/histography.jpg" />
-<meta name="twitter:image" content="http://histography.io/histography.jpg" />
-<meta property="og:url" content="http://histography.io" />
-<meta name=”twitter:url” content="http://histography.io" />
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="icon" type="image/png" href="svg/favicon.png" />
+<title>Red Caboose Hobby Shop - New York</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
 </head>
-<body class="home">
-<div id="loading">
-<div class="icon"></div>LOADING HISTORY...</div>
-<div id="dontknow"></div>
-<canvas id="canvas"></canvas>
-<div id="graph_tip"><span>
-Welcome to Histography
-<br>where every dot is a historic event from wikipedia
-<br>
-<br>You are now viewing history from 1600 - 2000
-<br>Resize the bottom bar to view any time period or era<br>
-<div class="gotit">Got It</div>
-</span>
-<div class="arrow"></div>
-</div>
-<div id="round_tip"><span>
-This screen will show you selected events
-<br>
-throughout history
-<br><br>
-Scroll through the events on the left<br> The more you move, the further you will delve into history
-<br><div class="gotit">Got It</div>
-</span>
-</div>
-<div id="texture"></div>
-<div id="mouse_move" class="zoom">
-<div id="current_year"></div>
-<div id="line"></div>
-<div id="cursor"></div>
-</div>
-<div id="hover_event"></div>
-<div id="mvps"></div>
-<div id="graph_menu" class="menu">
-<div class="content">
-<div class="logo"></div>
-<h2 id="graph_h2"></h2>
-<ul></ul>
-</div>
-</div>
-<div id="round_menu" class="menu">
-<div class="content">
-<div class="logo"></div>
-<h2 id="round_h2"></h2>
-<div id="round_selected"></div>
-<ul></ul>
-<div id="dice">FEELING LUCKY</div>
-</div>
-</div>
-<div id="footer">
-<div id="periods">
-<ul>
-<li>The Beginning</li>
-<li>/ Earth Formation</li>
-<li>/ Seeds Of Life</li>
-<li>/ Age Of Fish</li>
-<li>/ Age Of Reptiles</li>
-<li>/ Age Of Mammals</li>
-<li>/ Stone Age</li>
-<li>/ Bronze Age</li>
-<li>/ Iron Age</li>
-<li>/ Middle Ages</li>
-<li>/ Renaissance</li>
-<li>/ Industrial Age</li>
-<li>/ Information Age</li>
-</ul>
-</div>
-<div id="slider_years">
-<div>1998</div>
-<div>1999</div>
-</div>
-<div id="slider_container">
-<div id="slider"></div>
-</div>
-</div>
-<div id="screen1">
-<div id="graph_toptext">
-<a href="http://cargocollective.com/matanstauber/Histography" target="_blank"><span class="about">About</span></a>
-<span class="space">&#9900</span>
-<span class="wiki">Based On Wikipedia</span></span> <span class="space">&#9900</span> <span class="sound">Sound On</span>
-</div>
-</div>
-<div id="screen2">
-<div id="round">
-<div id="round_toptext">
-<a href="http://cargocollective.com/matanstauber/Histography" target="_blank"><span class="about">About</span></a>
-<span class="space">&#9900</span>
-<span class="wiki">Based On Wikipedia</span></span> <span class="space">&#9900</span> <span class="sound">Sound On</span>
-</div>
-<div id="round_year">2015</div>
-<div class="toptext"></div>
-</div>
-</div>
-<div id="home">
-<div id="matan"><a href='http://cargocollective.com/matanstauber' target="_blank">By Matan Stauber</a>
-</div>
-<div id="logo_container">
-<div class="logo_animated"></div>
-<div class="text">
-<h1>Histography <span>[BETA]</span></h1>
-<h2>INTERACTIVE TIMELINE OF HISTORY</h2>
-</div>
-</div>
-<div id="round_description">
-<div class="line"></div>
-<h3>Editorial Stories</h3>
-<p>Discover Handpicked Stories from The Entire History</p>
-</div>
-<div id="graph_description">
-<div class="line"></div>
-<h3>EVERYTHING</h3>
-<p>Every Historical Event</p>
-</div>
-</div>
-<audio id="audio_sand" loop>
-<source src="audio/sand.mp3"></source>
-</audio>
-<audio id="audio_modes">
-<source src="audio/modes.mp3"></source>
-</audio>
-<audio id="audio_tap">
-<source src="audio/tap.mp3"></source>
-</audio>
-<audio id="audio_zoom">
-<source src="audio/zoom.mp3"></source>
-</audio>
-<audio id="audio_background" id="audio_background" loop>
-<source src="audio/background.mp3"></source>
-</audio>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="plugins.js"></script>
-<script>
-        loader_stuck = setInterval(function() {
-            location.reload()
-        }, 3e4)
-    </script>
-<script src="int.js"></script>
-<script src="script.js"></script>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('images/buttonsubway_blk.gif','images/buttoncars_blk.gif','images/buttonplanes_blk.gif','images/buttonbooks_blk.gif','images/buttonstore_blk.gif')">
+<table width="732" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#AA2600">
+  <tr>
+    <td width="780" bgcolor="#FFFFFF"><div align="center">
+      <table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="120"><img src="images/logo.gif" width="140" height="103"></td>
+          <td ><div align="center"><img src="images/homebanner_rt.jpg" width="614" height="120"></div></td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF"><img src="images/addressbar.gif" width="780" height="25"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF"><div align="center">
+      <br>
+      <table width="97%" border="0" cellspacing="1" cellpadding="0">
+        <tr>
+          <td><img src="images/headline.gif" width="745" height="38"></td>
+        </tr>
+        <tr>
+          <td>
+          
+          <p>Look for the building's new chrome and glass front. We're still downstairs, off the back of the lobby.</p>
+          
+          <p> On this site since 1946 there has been a hobby shop. While we still do model trains in a variety of scales, 
+                we are strong in die cast planes and cars, 
+            electric slots cars, plastic kits, model figures in many train and architectural scales models paints, we also have a vast range of hobby supplies, paint, tools, glues etc, and a large book and video dept. </p>
+			
+			<strong>Clearance Liquidation Sale:</strong>  
+				<ul>
+					<li> HO Locomotives: Kato, Athearn, Lifelike, Proto 2000 </li>
+					<li>Marklin Locomotives and Sets </li>
+					<li>N Scale Locomotives</li>
+				</ul>
+				
+				<strong>Available now our new New York City Transit Car - Kawasaki - R142A </strong>
+				
+				
+				
+				
+				<br/>
+				
+				<span>Plastic injection molded kits 5 cars wheels and decals -$299.99</span>
+				<br/>
+				<span>Custom built cars $165 per car your choice of line and destination markings</span><br/>
+				
+				<p>Call 212-575-0155 or stop by 23 W. 45th St, for specific details</p></td>
+        </tr>
+      </table>
+      <br>
+    </div>      <div align="center">
+        <table width="700" border="0" cellspacing="6" cellpadding="0">
+          <tr>
+            <td width="147"><div align="center">
+              <table width="30%" border="0" cellspacing="1" cellpadding="0">
+                <tr>
+                  <td><div align="center"><img src="images/windowsubway_on.jpg" name="picsubway" width="145" height="185" id="picsubway"></div></td>
+                </tr>
+                <tr>
+                  <td><div align="center"><a href="trains.htm" onMouseOver="MM_swapImage('butsubway','','images/buttonsubway_blk.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/buttonsubway_off.gif" name="butsubway" width="145" height="54" border="0" id="butsubway"></a></div></td>
+                </tr>
+              </table>
+            </div></td>
+            <td width="147"><div align="center">
+              <table width="2%" border="0" cellspacing="1" cellpadding="0">
+                <tr>
+                  <td><div align="center"><img src="images/windowcars_on.jpg" name="piccars" width="145" height="185" id="piccars"></div></td>
+                </tr>
+                <tr>
+                  <td><div align="center"><a href="cars.htm" onMouseOver="MM_swapImage('butcars','','images/buttoncars_blk.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/buttoncars_off.gif" name="butcars" width="145" height="54" border="0" id="butcars"></a></div></td>
+                </tr>
+              </table>
+            </div></td>
+            <td width="147"><div align="center">
+              <table width="2%" border="0" cellspacing="1" cellpadding="0">
+                <tr>
+                  <td><div align="center"><img src="images/windowplanes_on.jpg" name="picplanes" width="145" height="185" id="picplanes"></div></td>
+                </tr>
+                <tr>
+                  <td><div align="center"><a href="planes.htm" onMouseOver="MM_swapImage('butplanes','','images/buttonplanes_blk.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/buttonplanes_off.gif" name="butplanes" width="145" height="54" border="0" id="butplanes"></a></div></td>
+                </tr>
+              </table>
+            </div></td>
+            <td width="20"><div align="center">
+              <table width="4%" border="0" cellspacing="1" cellpadding="0">
+                <tr>
+                  <td><div align="center"><img src="images/windowbooks_on.jpg" name="picbooks" width="145" height="185" id="picbooks"></div></td>
+                </tr>
+                <tr>
+                  <td><div align="center"><a href="books.htm" onMouseOver="MM_swapImage('butbooks','','images/buttonbooks_blk.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/buttonbooks_off.gif" name="butbooks" width="145" height="54" border="0" id="butbooks"></a></div></td>
+                </tr>
+              </table>
+            </div></td>
+            <td width="179"><div align="center">
+              <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                <tr>
+                  <td><div align="center"><img src="images/windowstore_off.jpg" name="picstore" width="145" height="185" id="picstore"></div></td>
+                </tr>
+                <tr>
+                  <td><div align="center"><a href="gallery.htm" onMouseOver="MM_swapImage('butstore','','images/buttonstore_blk.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/buttonstore_off.gif" name="butstore" width="145" height="54" border="0" id="butstore"></a></div></td>
+                </tr>
+              </table>
+            </div></td>
+          </tr>
+        </table>
+      </div>    <div align="center"><span class="smallertxt"><br>
+        &copy; 2004 The Red Caboose - All Rights Reserved - 
+        Site Design by <a href="http://www.patrouphelps.com" target="_blank">Patrou Phelps</a>       <br>
+    </span></div></td>
+  </tr>
+</table>
+<!-- ImageReady Slices (allpages3.psd - Slices: buttonbooks_off, buttoncars_off, buttonplanes_off, buttonstore_off, buttonsubway_off, homebanner_rt, logo, windowbooks_off, windowcars_off, windowplanes_off, windowstore_off, windowsubway_off) --><!-- End ImageReady Slices -->
 </body>
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'a2plcpnl0374'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
+</html>
